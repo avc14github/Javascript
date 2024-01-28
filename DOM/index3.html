@@ -1,0 +1,58 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <title>function Chapter</title>
+    </head>
+    <body>
+      <div class="container"></div>
+      <ul class="list">
+        <li class="item">car</li>
+      </ul>
+    </body>
+    <script>
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      function addItems(item) {
+        const li = document.createElement("li");
+        li.innerHTML = `${item}`;
+        document.querySelector(".list").appendChild(li);
+        li.className = "item";
+      }
+      addItems("bike");
+      addItems("house");
+
+      function addOptiItem(item) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(item));
+        document.querySelector(".list").appendChild(li);
+      }
+
+      addOptiItem("island");
+      addOptiItem("plane");
+
+      //   edit
+
+      const secondItem = document.querySelector("li:nth-child(2)");
+      console.log(secondItem);
+      //   secondItem.innerHTML = "jet";
+
+      const newLi = document.createElement("li");
+      newLi.textContent = "jet";
+      //   document.querySelector(".list").appendChild(newLi);
+
+      // replacewith
+
+      secondItem.replaceWith(newLi);
+
+      //   edit
+
+      const firstItem = document.querySelector("li:first-child");
+      firstItem.outerHTML = "<li>Hotel</li>";
+
+      //   remove - delete
+
+      const lastItem = document.querySelector("li:last-child");
+      lastItem.remove();
+    </script>
+  </html>
+</DOCTYPE>

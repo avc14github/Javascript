@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index page</title>
+  </head>
+  <body id="bd" class="body-st">
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <style>
+    .body-st {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <script>
+    const parent = document.querySelector(".parent");
+    //   console.log(parent);
+    //   console.log(parent.children[1]);
+    //   for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    //   }
+    parent.children[2].style.color = "orange";
+    parent.firstElementChild.style.backgroundColor = "blue";
+    parent.lastElementChild.style.backgroundColor = "red";
+
+    //   const child = document.querySelector(".day");
+    //   console.log(child);
+    //   console.log(child.parentElement);
+    //   console.log(child.nextElementSibling);
+
+    console.log("NODES:", parent.childNodes);
+    console.log();
+  </script>
+</html>

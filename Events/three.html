@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>New JavaScript Async</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+  </body>
+  <script>
+    const changeDate = function (str) {
+      const date = new Date();
+      document.querySelector("h1").innerHTML = date;
+      console.log(str);
+    };
+
+    let dateUpdate = setInterval(changeDate, 1000, "new time");
+
+    const startDate = document
+      .querySelector("#start")
+      .addEventListener("click", function () {
+        if (!dateUpdate) {
+          dateUpdate = setInterval(changeDate, 1000, "stated date");
+        }
+      });
+
+    const stopDate = document
+      .querySelector("#stop")
+      .addEventListener("click", function () {
+        clearInterval(dateUpdate);
+        dateUpdate = null;
+        console.log("stopped and dateupdate is null");
+      });
+
+    // const sayHi = function () {
+    //   console.log("hii");
+    // };
+
+    // const hi = setInterval(sayHi, 1000);
+
+    // const stopHi = document
+    //   .querySelector("#stop")
+    //   .addEventListener("click", function () {
+    //     clearInterval(hi);
+    //   });
+
+    // const startHi = document
+    //   .querySelector("#start")
+    //   .addEventListener("click", function () {
+    //     setInterval(sayHi, 1000);
+    //   });
+  </script>
+</html>
