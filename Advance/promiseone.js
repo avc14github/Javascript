@@ -100,8 +100,15 @@ async function getAllUsers() {
 
 // getAllUsers();
 
+// error 404 or similar network error also are in resolved promise
+
 fetch("https://api.github.com/users/hiteshchoudhary")
   .then((res) => res.json())
   .then((data) => console.log(data))
   .catch((err) => console.log(err))
   .finally(() => console.log("no problem "));
+
+fetch("https://randomuser.me/api/")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((e) => console.log(e));
